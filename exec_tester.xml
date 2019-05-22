@@ -1,0 +1,38 @@
+<workflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://levelsbeyond.com/schema/workflow"
+	xmlns:nimbus="http://levelsbeyond.com/schema/workflow/nimbus"
+	xsi:schemaLocation="http://levelsbeyond.com/schema/workflow http://www.levelsbeyond.com/schema/workflow.xsd"
+	id="mikeTestPy"
+	name="Mike Test PY"
+	executionLabelExpression="Mike Test Py"
+	subjectDOClassName=""
+	showInUserInterface="true"
+	resultDataDef=""
+	sdkVersion="5.4"
+	>
+	
+	<initialStepName>test py</initialStepName>
+	
+	<runCommandStep name="test py"
+		remoteHostExpression="10.20.38.139"
+		executableNameExpression="python"
+		preferRemoteExecution="true"
+		resultCodeDataDef="statusCode"
+		argsExpression="--help"
+		stderrDataDef="stdErr"
+		stdoutDataDef="stdOut"
+		nextStep="end"
+		/>
+	
+	
+	<!-- END STEPS-->
+	<noopStep name="end"/>
+	
+	
+	<!-- Internal -->
+	<contextDataDef name="statusCode"               dataType="String"       multiple="true"/>
+	<contextDataDef name="stdErr"                   dataType="String"       multiple="true"/>
+	<contextDataDef name="stdOut"                   dataType="String"       multiple="true"/>
+	
+
+</workflow>
