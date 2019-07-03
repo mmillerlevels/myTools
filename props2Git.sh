@@ -1,8 +1,15 @@
 #!/bin/bash
 
 #Things
+PATH=/reachengine/cmds:/reachengine/utilities:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/reachengine/bin
 GIT=`which git`
 REPO_DIR=/reachengine/propBkps/
+
+#Is our local repo here
+if [ ! -d "{REPO_DIR}" ]; then
+	mkdir -p ${REPO_DIR} && cd ${REPO_DIR} && ${GIT} init
+	${GIT} remote add origin "git@github.com:username/repo.git"
+fi
 
 #Grab the latest files we want
 /bin/cat /reachengine/tomcat/conf/context.xml > ${REPO_DIR}context.xml
@@ -22,4 +29,4 @@ echo "Update Done!  `date`" >> ${REPO_DIR}commitLog.log
 cd ${REPO_DIR}
 ${GIT} add --all .
 ${GIT} commit -m "Daily Update"
-${GIT} push git@github.com:username/repo.git master
+${GIT} push "git@github.com:username/repo.git master"
