@@ -29,4 +29,4 @@ echo "Update Done!  `date`" >> ${REPO_DIR}commitLog.log
 cd ${REPO_DIR}
 ${GIT} add --all .
 ${GIT} commit -m "Daily Update"
-${GIT} push "git@github.com:username/repo.git master"
+${GIT} push push origin master
