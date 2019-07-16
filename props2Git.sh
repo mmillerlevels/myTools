@@ -8,7 +8,7 @@ REPO_DIR=/reachengine/propBkps/
 #Is our local repo here
 if [ ! -d "{REPO_DIR}" ]; then
 	mkdir -p ${REPO_DIR} && cd ${REPO_DIR} && ${GIT} init
-	${GIT} remote add origin "https://github.com/mmillerlevels/gitTest.git"
+	${GIT} remote add origin "git@github.com:mmillerlevels/gitTest.git"
 fi
 
 #Grab the latest files we want
