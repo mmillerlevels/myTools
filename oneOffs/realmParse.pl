@@ -15,8 +15,8 @@ foreach $line (@lines) {
     print qq(samlGroupRoleMap.$line\_Contributor.NUM=true).qq(\n);
     print qq(samlGroupRoleMap.$line\_Editor.NUM=true).qq(\n);
     print qq(samlGroupRoleMap.$line\_Researcher.NUM=true).qq(\n);
-    print qq(samlGroupRoleMap.$line\_Librarian Admin.NUM=true).qq(\n);
-    print qq(samlGroupRoleMap.$line\_Librarian Editor.NUM=true).qq(\n);
-    print qq(samlGroupRoleMap.$line\_Librarian Contributor.NUM=true).qq(\n);
-    print qq(samlGroupRoleMap.$line\_Librarian Researcher.NUM=true).qq(\n);
+#    print qq(samlGroupRoleMap.$line\_Librarian Admin.NUM=true).qq(\n);
+#    print qq(samlGroupRoleMap.$line\_Librarian Editor.NUM=true).qq(\n);
+#    print qq(samlGroupRoleMap.$line\_Librarian Contributor.NUM=true).qq(\n);
+#    print qq(samlGroupRoleMap.$line\_Librarian Researcher.NUM=true).qq(\n);
 }
