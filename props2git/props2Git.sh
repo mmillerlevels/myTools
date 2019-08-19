@@ -22,6 +22,8 @@ fi
 /bin/cat /reachengine/wfruntime/conf/dynamic.wferuntime.properties > ${REPO_DIR}dynamic.wferuntime.properties
 /bin/cat /reachengine/wfruntime/conf/log4j.properties > ${REPO_DIR}log4j.properties
 /bin/cat /reachengine/wfruntime/conf/local.wferuntime.properties > ${REPO_DIR}local.wferuntime.properties
+/bin/cat /reachengine/tomcat/conf/Catalina/localhost/ROOT.xml > ${REPO_DIR}ROOT.xml
+/bin/cat /etc/reachengine/reachengine.conf > ${REPO_DIR}reachengine.conf
 
 echo "Update Done!  `date`" >> ${REPO_DIR}commitLog.log
 
