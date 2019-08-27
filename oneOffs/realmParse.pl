@@ -9,6 +9,7 @@ my @lines = read_file("realms.txt", chomp => 1);
 my $line;
 
 #Print each line that we want in our final file, with each line from the realms list
+# 'samlGroupRoleMap' will need to be replaced by your reach role; don't forget!
 foreach $line (@lines) {
     print qq(#REALM - $line - ) . qq(\n);
     print qq(samlGroupRoleMap.$line\_Administrator.NUM=true).qq(\n);
