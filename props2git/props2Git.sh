@@ -24,6 +24,9 @@ fi
 /bin/cat /reachengine/wfruntime/conf/local.wferuntime.properties > ${REPO_DIR}local.wferuntime.properties
 /bin/cat /reachengine/tomcat/conf/Catalina/localhost/ROOT.xml > ${REPO_DIR}ROOT.xml
 /bin/cat /etc/reachengine/reachengine.conf > ${REPO_DIR}reachengine.conf
+/bin/cat /etc/httpd/conf.d/httpstream.conf > ${REPO_DIR}httpstream.conf
+/bin/cat /reachengine/tomcat/bin/catalina.sh > ${REPO_DIR}catalina.sh
+#Files we want ^ 
 
 echo "Update Done!  `date`" >> ${REPO_DIR}commitLog.log
 
