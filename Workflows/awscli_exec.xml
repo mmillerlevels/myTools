@@ -1,0 +1,38 @@
+<workflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://levelsbeyond.com/schema/workflow"
+	xmlns:nimbus="http://levelsbeyond.com/schema/workflow/nimbus"
+	xsi:schemaLocation="http://levelsbeyond.com/schema/workflow http://www.levelsbeyond.com/schema/workflow.xsd"
+	id="mikeTestAws"
+	name="Mike Test AWS"
+	executionLabelExpression="Mike Test AWS"
+	subjectDOClassName=""
+	showInUserInterface="true"
+	resultDataDef=""
+	sdkVersion="5.4"
+	>
+
+	<initialStepName>test py</initialStepName>
+
+	<runCommandStep name="test awscli"
+		remoteHostExpression="10.199.131.42"
+		executableNameExpression="aws"
+		preferRemoteExecution="true"
+		resultCodeDataDef="statusCode"
+		argsExpression="--version"
+		stderrDataDef="stdErr"
+		stdoutDataDef="stdOut"
+		nextStep="end"
+		/>
+
+
+	<!-- END STEPS-->
+	<noopStep name="end"/>
+
+
+	<!-- Internal -->
+	<contextDataDef name="statusCode"               dataType="String"       multiple="true"/>
+	<contextDataDef name="stdErr"                   dataType="String"       multiple="true"/>
+	<contextDataDef name="stdOut"                   dataType="String"       multiple="true"/>
+
+
+</workflow>
