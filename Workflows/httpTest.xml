@@ -1,0 +1,38 @@
+<workflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://levelsbeyond.com/schema/workflow"
+    xmlns:nimbus="http://levelsbeyond.com/schema/workflow/nimbus"
+    xsi:schemaLocation="http://levelsbeyond.com/schema/workflow http://www.levelsbeyond.com/schema/workflow.xsd"
+    id="mikeTestAws"
+    name="Mike Test AWS"
+    executionLabelExpression="Mike Test httpSteps"
+    subjectDOClassName=""
+    showInUserInterface="true"
+    resultDataDef=""
+    sdkVersion="5.4"
+>
+
+<initialStepName>test py</initialStepName>
+
+<submitHttpStep name="back up asset"
+    urlExpression="https://slack.com/api/api.test"
+    requestMethodExpression="GET"
+    responseCodeDataDef="responseCode"
+    responsePayloadDataDef="backupResponse"
+    executionLabelExpression="Testing 'dis out"
+    continueOnException="false"
+    pctComplete="50"
+    nextStep="end"
+>
+</submitHttpStep>
+
+<!-- END STEPS-->
+<noopStep name="end"/>
+
+
+<!-- Internal -->
+<contextDataDef name="statusCode"               dataType="String"       multiple="true"/>
+<contextDataDef name="responseCode"                   dataType="String"       multiple="true"/>
+<contextDataDef name="backupResponse"                   dataType="String"       multiple="true"/>
+
+
+</workflow>
