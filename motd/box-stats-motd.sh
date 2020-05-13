@@ -151,7 +151,7 @@ $FrS   ${KS} If this is only a 2.7+ Webapp, you wont see Runtime data; only Work
 $FrS   ${KS}Reach Workflow SDK Version $ES ${VCL}$(ls -ll /reachengine/extralib/studio-workflow-sdk.jar | grep studio-workflow-sdk- | cut -d / -f7 | cut -d - -f4)
 $FrS   ${KS}Reach Workflow Runtime Version $ES ${VCL}$(ls -ll /reachengine/wfruntime/ | grep studio-workflow-runtime- | awk '{print $9}' | cut -d - -f4)
 $FrS   ${KS}Reach Expiration $ES ${VCL}$(grep '^Expiration' /reachengine/tomcat/lib/license.lic | sed 's/^Expiration=//')
-$FrS   ${KS}ReachEngine GC Count Today $ES ${VCL}$(grep "Full GC" /reachengine/tomcat/logs/gc.log | awk '{print $1}' | awk -FT '{print $1}'| uniq -c | head -1 | awk '{print $1}')
+$FrS   ${KS}ReachEngine GC Count Today $ES ${VCL}$(grep "Full GC" /reachengine/tomcat/logs/gc.log | awk '{print $1}' | awk -FT '{print $1}'| uniq -c | tail -1 | awk '{print $1}')
 $PrHS$Sch2$HSB$Sch2$PHS$Sch1
 \e[0;37m"
 
