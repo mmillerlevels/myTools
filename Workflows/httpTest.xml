@@ -2,28 +2,27 @@
     xmlns="http://levelsbeyond.com/schema/workflow"
     xmlns:nimbus="http://levelsbeyond.com/schema/workflow/nimbus"
     xsi:schemaLocation="http://levelsbeyond.com/schema/workflow http://www.levelsbeyond.com/schema/workflow.xsd"
-    id="mikeTestAws"
-    name="Mike Test AWS"
-    executionLabelExpression="Mike Test httpSteps"
+    id="runCommandTEST"
+    name="Mike Test"
+    executionLabelExpression="Mike Test"
     subjectDOClassName=""
     showInUserInterface="true"
     resultDataDef=""
     sdkVersion="5.4"
 >
 
-<initialStepName>test py</initialStepName>
+<initialStepName>test runcommands</initialStepName>
 
-<submitHttpStep name="back up asset"
-    urlExpression="https://slack.com/api/api.test"
-    requestMethodExpression="GET"
-    responseCodeDataDef="responseCode"
-    responsePayloadDataDef="backupResponse"
-    executionLabelExpression="Testing 'dis out"
-    continueOnException="false"
-    pctComplete="50"
-    nextStep="end"
->
-</submitHttpStep>
+<runCommandStep name="hello test"
+        executablePathExpression="/bin/echo"
+        pctComplete="50"
+        continueOnException="true"
+        stallOnErrorResultCode="true"
+        >
+        <arg>hello</arg>
+        <arg>;</arg>
+        <arg>echo $?</arg>
+    </runCommandStep>
 
 <!-- END STEPS-->
 <noopStep name="end"/>
