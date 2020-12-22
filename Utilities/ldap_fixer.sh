@@ -2,10 +2,13 @@
 
 # Copyright 2020 Levels Beyond 
 # Author Mike Miller
+# 
+# Simple script to fix ldap association issues with Reach
+#
 # shellcheck disable=SC2068
 
 # Read in the ReachEngine URL and system user password, for api usage
-echo -e "Please enter your reachengine URL - Ex: 'http://10.20.16.50:8081'"
+echo -e "Please enter your reachengine URL - Ex: http://192.168.1.100:8081"
 echo -e "No trailing '/'"
 echo
 read -r url
@@ -18,7 +21,7 @@ start_time=$(/usr/bin/date +%h_%d-%H:%M:%S)
 echo -e "Grabbing all enabled users in the system"
 echo -e "You might be asked to input reachengine's psql password"
 
-# Use psql to snag enabled users. -t prevents the command from returning n of rows
+# Use psql to snag enabled users. -A is for unaligned output. -t prevents the command from returning n of rows
 enabled_users=$(/usr/bin/psql studio reachengine -A -t -c "SELECT id FROM security_user WHERE enabled = true AND user_name != 'system'")
 
 # For each id returned as an enabled user, disable then re-enable the user with the api
