@@ -1,9 +1,11 @@
 #!/usr/bin/bash
 
 # Copyright 2020 Levels Beyond 
-# Author Mike Miller
+# Author Mike Miller (mmillerlevels)
 # 
 # Simple script to fix ldap association issues with Reach
+#
+# Run on the Postgres server, or this isn't going to work as intended
 #
 # shellcheck disable=SC2068
 
